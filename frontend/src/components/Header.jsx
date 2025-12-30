@@ -1,13 +1,11 @@
 import React from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { siteConfig } from '../data/mock';
 
 const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Books', href: '#books' },
-    { name: 'Ventures', href: '#ventures' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -21,28 +19,26 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50">
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-stone-50/95 backdrop-blur-md border-b border-stone-200/50">
+      <nav className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center group-hover:bg-emerald-700 transition-colors duration-300">
-              <Leaf className="w-5 h-5 text-stone-100" />
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-serif text-xl text-stone-800 tracking-wide">{siteConfig.name}</span>
-              <span className="block text-xs text-stone-500 tracking-widest uppercase">{siteConfig.title}</span>
-            </div>
+          <a href="#" className="flex items-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/mg2r9hid_pjkzsnzr.png" 
+              alt="10X Design Logo" 
+              className="h-14 w-14 rounded-xl object-cover"
+            />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-sm text-stone-600 hover:text-emerald-800 transition-colors duration-300 tracking-wide uppercase"
+                className="text-sm text-stone-600 hover:text-emerald-700 transition-colors duration-300 tracking-wide"
               >
                 {link.name}
               </a>
@@ -50,7 +46,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="px-6 py-2.5 bg-emerald-800 text-stone-100 text-sm tracking-wide uppercase hover:bg-emerald-700 transition-all duration-300 rounded"
+              className="px-6 py-2.5 bg-emerald-800 text-stone-100 text-sm hover:bg-emerald-700 transition-all duration-300 rounded-lg"
             >
               Book a Call
             </a>
@@ -74,7 +70,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-stone-600 hover:text-emerald-800 transition-colors duration-300 tracking-wide uppercase text-sm py-2"
+                  className="text-stone-600 hover:text-emerald-700 transition-colors duration-300 text-sm py-2"
                 >
                   {link.name}
                 </a>
@@ -82,7 +78,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, '#contact')}
-                className="mt-4 px-6 py-3 bg-emerald-800 text-stone-100 text-sm tracking-wide uppercase hover:bg-emerald-700 transition-all duration-300 rounded text-center"
+                className="mt-4 px-6 py-3 bg-emerald-800 text-stone-100 text-sm hover:bg-emerald-700 transition-all duration-300 rounded-lg text-center"
               >
                 Book a Call
               </a>
