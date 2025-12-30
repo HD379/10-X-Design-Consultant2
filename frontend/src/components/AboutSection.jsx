@@ -1,11 +1,10 @@
 import React from 'react';
-import { Award, Calendar, MapPin } from 'lucide-react';
+import { Award, Calendar } from 'lucide-react';
 import { images } from '../data/mock';
 
 const AboutSection = () => {
   const highlights = [
     { icon: Calendar, label: '30+ Years', description: 'Design Excellence' },
-    { icon: MapPin, label: 'Marin County', description: 'California' },
     { icon: Award, label: '6+ Books', description: 'Published Author' }
   ];
 
@@ -39,7 +38,7 @@ const AboutSection = () => {
             </div>
 
             {/* Highlights */}
-            <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-stone-200">
+            <div className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-stone-200">
               {highlights.map((item, index) => (
                 <div key={index} className="text-center">
                   <div className="w-10 h-10 mx-auto rounded-full bg-emerald-50 flex items-center justify-center mb-2">

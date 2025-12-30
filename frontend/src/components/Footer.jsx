@@ -23,7 +23,7 @@ const Footer = () => {
             />
             <div>
               <span className="text-stone-100 font-serif text-lg">Dane Rose</span>
-              <span className="block text-xs text-stone-500">Cultural Design Consultant</span>
+              <span className="block text-xs text-stone-500">10 X Design and Consultant</span>
             </div>
           </div>
 
