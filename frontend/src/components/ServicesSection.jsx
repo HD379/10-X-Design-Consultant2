@@ -19,7 +19,7 @@ const ServicesSection = () => {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-emerald-700 text-sm tracking-wider uppercase">Services</span>
           <h2 className="font-serif text-4xl text-stone-800 mt-3 mb-4">
-            10X Your Life
+            10 X Your Life
           </h2>
           <p className="text-stone-600">
             Transform your relationships, business, and community with decades of wisdom.

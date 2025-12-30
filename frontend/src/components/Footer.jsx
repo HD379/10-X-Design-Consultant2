@@ -17,8 +17,8 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
-              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/mg2r9hid_pjkzsnzr.png" 
-              alt="10X Design Logo" 
+              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/erggylh2_10%20X%20Design%20logo.png" 
+              alt="10 X Design Logo" 
               className="h-12 w-12 rounded-lg object-cover"
             />
             <div>
