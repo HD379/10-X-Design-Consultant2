@@ -2,24 +2,24 @@
 
 export const siteConfig = {
   name: "Dane Rose",
-  title: "10X Designer & Consultant",
+  title: "10 X Designer & Consultant",
   tagline: "Cultural Design for Sustainable Well-being",
   rate: "$175/hour",
   phone: "415-455-9161",
-  email: "dane@daneeasterrose.com",
+  email: "dane@mysticallandscapes.com",
   description: "Rearranging time, money, thought and natural resources to create higher yields of sustainable well-being at the personal, relationship, family, community and national level."
 };
 
 export const services = [
   {
     id: 1,
-    title: "10X Relationships",
+    title: "10 X Relationships",
     description: "Transform your personal and professional relationships through conscious chemistry and emotional intelligence. Learn to create deeper connections and sustainable bonds.",
     icon: "Heart"
   },
   {
     id: 2,
-    title: "10X Business",
+    title: "10 X Business",
     description: "Elevate your business through cultural design principles. Optimize operations, enhance team dynamics, and create environments where people and profits thrive together.",
     icon: "TrendingUp"
   },
@@ -43,7 +43,7 @@ export const services = [
   },
   {
     id: 6,
-    title: "10X Hotels & Hospitality",
+    title: "10 X Hotels & Hospitality",
     description: "Create transformative hospitality experiences that blend biophilic design, wellness, and exceptional guest journeys.",
     icon: "Building"
   }
