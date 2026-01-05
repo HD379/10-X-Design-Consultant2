@@ -23,9 +23,9 @@ const AboutSection = () => {
 
           {/* Content */}
           <div>
-            <span className="text-emerald-700 text-sm tracking-wider uppercase">About Dane</span>
-            <h2 className="font-serif text-4xl text-stone-800 mt-3 mb-6">
-              A Life Devoted to Meaningful Design
+            <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">About Dane</span>
+            <h2 className="font-sans text-4xl text-stone-800 mt-3 mb-6">
+              Design devoted to sustainable human well-being
             </h2>
             
             <div className="space-y-4 text-stone-600 leading-relaxed">
