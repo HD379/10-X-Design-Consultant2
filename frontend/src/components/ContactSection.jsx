@@ -8,6 +8,7 @@ const ContactSection = () => {
     name: '',
     email: '',
     phone: '',
+    motivation: '',
     dream: '',
     valuable: '',
     links: ''
@@ -26,7 +27,7 @@ const ContactSection = () => {
     toast.success('Message sent! Dane will contact you soon.');
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', dream: '', valuable: '', links: '' });
+      setFormData({ name: '', email: '', phone: '', motivation: '', dream: '', valuable: '', links: '' });
     }, 3000);
   };
 
@@ -48,21 +49,6 @@ const ContactSection = () => {
             <div className="bg-emerald-800 p-5 rounded-xl text-white">
               <p className="text-emerald-200 text-sm uppercase tracking-wide mb-1">Consulting Rate</p>
               <p className="font-sans text-2xl">{siteConfig.rate} or flat rate projects</p>
-            </div>
-
-            {/* Question */}
-            <div className="mt-8 p-6 bg-white rounded-xl border border-stone-200">
-              <p className="text-stone-700 font-medium mb-3">Is your primary motivation for this project creating sustainable well-being?</p>
-              <div className="flex gap-4">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="motivation" value="yes" className="w-4 h-4 text-emerald-600" />
-                  <span className="text-stone-600">Yes</span>
-                </label>
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="motivation" value="no" className="w-4 h-4 text-emerald-600" />
-                  <span className="text-stone-600">No</span>
-                </label>
-              </div>
             </div>
           </div>
 
@@ -114,6 +100,34 @@ const ContactSection = () => {
                       className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
                       placeholder="(555) 000-0000"
                     />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-stone-600 mb-2">Is your primary motivation for this project creating sustainable well-being? *</label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="radio" 
+                          name="motivation" 
+                          value="yes" 
+                          checked={formData.motivation === 'yes'}
+                          onChange={handleChange}
+                          required
+                          className="w-4 h-4 text-emerald-600 border-stone-300 focus:ring-emerald-500" 
+                        />
+                        <span className="text-stone-700">Yes</span>
+                      </label>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="radio" 
+                          name="motivation" 
+                          value="no"
+                          checked={formData.motivation === 'no'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-emerald-600 border-stone-300 focus:ring-emerald-500" 
+                        />
+                        <span className="text-stone-700">No</span>
+                      </label>
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm text-stone-600 mb-1.5">Describe a little bit about your dream? *</label>
