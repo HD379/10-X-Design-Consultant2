@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../data/mock';
 import { toast } from 'sonner';
 
@@ -7,7 +7,10 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    phone: '',
+    dream: '',
+    valuable: '',
+    links: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -23,7 +26,7 @@ const ContactSection = () => {
     toast.success('Message sent! Dane will contact you soon.');
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', dream: '', valuable: '', links: '' });
     }, 3000);
   };
 
@@ -33,41 +36,33 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left - Info */}
           <div>
-            <span className="text-emerald-700 text-sm tracking-wider uppercase">Contact</span>
-            <h2 className="font-serif text-4xl text-stone-800 mt-3 mb-6">
+            <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">Contact</span>
+            <h2 className="font-sans text-4xl text-stone-800 mt-3 mb-6">
               Let's Create Something Beautiful
             </h2>
             <p className="text-stone-600 mb-8">
               Ready to transform your life, relationships, or business? Reach out to begin your journey.
             </p>
 
-            {/* Contact Info */}
-            <div className="space-y-4 mb-8">
-              <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-emerald-700" />
-                </div>
-                <div>
-                  <p className="text-xs text-stone-500">Call</p>
-                  <p className="text-stone-800 font-medium">{siteConfig.phone}</p>
-                </div>
-              </a>
-
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-                  <Mail className="w-4 h-4 text-emerald-700" />
-                </div>
-                <div>
-                  <p className="text-xs text-stone-500">Email</p>
-                  <p className="text-stone-800 font-medium">{siteConfig.email}</p>
-                </div>
-              </a>
-            </div>
-
             {/* Rate */}
             <div className="bg-emerald-800 p-5 rounded-xl text-white">
               <p className="text-emerald-200 text-sm uppercase tracking-wide mb-1">Consulting Rate</p>
-              <p className="font-serif text-2xl">{siteConfig.rate}</p>
+              <p className="font-sans text-2xl">{siteConfig.rate} or flat rate projects</p>
+            </div>
+
+            {/* Question */}
+            <div className="mt-8 p-6 bg-white rounded-xl border border-stone-200">
+              <p className="text-stone-700 font-medium mb-3">Is your primary motivation for this project creating sustainable well-being?</p>
+              <div className="flex gap-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="motivation" value="yes" className="w-4 h-4 text-emerald-600" />
+                  <span className="text-stone-600">Yes</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="motivation" value="no" className="w-4 h-4 text-emerald-600" />
+                  <span className="text-stone-600">No</span>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -78,12 +73,12 @@ const ContactSection = () => {
                 <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
                   <CheckCircle className="w-7 h-7 text-emerald-600" />
                 </div>
-                <h3 className="font-serif text-xl text-stone-800 mb-2">Message Sent!</h3>
+                <h3 className="font-sans text-xl text-stone-800 mb-2">Message Sent!</h3>
                 <p className="text-stone-600 text-sm">Dane will be in touch soon.</p>
               </div>
             ) : (
               <>
-                <h3 className="font-serif text-xl text-stone-800 mb-6">Send a Message</h3>
+                <h3 className="font-sans text-xl text-stone-800 mb-6">Send a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label className="block text-sm text-stone-600 mb-1.5">Name *</label>
@@ -110,15 +105,48 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-stone-600 mb-1.5">Message *</label>
+                    <label className="block text-sm text-stone-600 mb-1.5">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
+                      placeholder="(555) 000-0000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-stone-600 mb-1.5">Describe a little bit about your dream? *</label>
                     <textarea
-                      name="message"
-                      value={formData.message}
+                      name="dream"
+                      value={formData.dream}
                       onChange={handleChange}
                       required
-                      rows={4}
+                      rows={3}
                       className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50 resize-none"
-                      placeholder="How can Dane help you?"
+                      placeholder="Share your vision..."
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-stone-600 mb-1.5">What would make this relationship the most valuable for you?</label>
+                    <textarea
+                      name="valuable"
+                      value={formData.valuable}
+                      onChange={handleChange}
+                      rows={3}
+                      className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50 resize-none"
+                      placeholder="What outcomes would be most meaningful?"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-stone-600 mb-1.5">Links to anything you would like to share</label>
+                    <input
+                      type="text"
+                      name="links"
+                      value={formData.links}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
+                      placeholder="https://..."
                     />
                   </div>
                   <button
