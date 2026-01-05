@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
-import { siteConfig, images } from '../data/mock';
+import { siteConfig } from '../data/mock';
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -15,8 +15,8 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1629877053418-f278601c9428?w=1920&q=80"
-          alt="Luxury Mountain Landscape"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+          alt="Beautiful Modern Design"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 via-stone-900/30 to-stone-900/60" />
