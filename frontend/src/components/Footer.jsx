@@ -1,5 +1,4 @@
 import React from 'react';
-import { siteConfig } from '../data/mock';
 
 const Footer = () => {
   const scrollToSection = (e, href) => {
@@ -22,7 +21,7 @@ const Footer = () => {
               className="h-12 w-12 rounded-lg object-cover"
             />
             <div>
-              <span className="text-stone-100 font-serif text-lg">Dane Rose</span>
+              <span className="text-stone-100 font-sans text-lg">Dane Rose</span>
               <span className="block text-xs text-stone-500">10 X Design and Consultant</span>
             </div>
           </div>
@@ -32,12 +31,6 @@ const Footer = () => {
             <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="hover:text-emerald-400 transition-colors">Services</a>
             <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="hover:text-emerald-400 transition-colors">Contact</a>
-          </div>
-
-          {/* Contact */}
-          <div className="text-sm text-center md:text-right">
-            <p className="text-stone-400">{siteConfig.phone}</p>
-            <p className="text-emerald-500">{siteConfig.rate}</p>
           </div>
         </div>
 
