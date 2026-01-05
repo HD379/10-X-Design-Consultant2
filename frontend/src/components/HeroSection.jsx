@@ -11,12 +11,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20">
+    <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src={images.hero}
-          alt="Mystical Garden"
+          src="https://images.unsplash.com/photo-1629877053418-f278601c9428?w=1920&q=80"
+          alt="Luxury Mountain Landscape"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 via-stone-900/30 to-stone-900/60" />
@@ -24,11 +24,6 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Rate Badge */}
-        <div className="inline-block px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-          <span className="text-stone-100 text-sm tracking-wider">{siteConfig.rate} Consulting</span>
-        </div>
-
         {/* Main Heading */}
         <h1 className="font-serif text-5xl md:text-7xl text-stone-100 leading-tight mb-6">
           {siteConfig.tagline}
@@ -39,12 +34,12 @@ const HeroSection = () => {
           {siteConfig.description}
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button - No Arrow */}
         <a
           href="#contact"
           className="inline-block px-8 py-4 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg"
         >
-          Begin Your Journey →
+          Begin Your Journey
         </a>
       </div>
 
