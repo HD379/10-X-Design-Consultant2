@@ -15,11 +15,11 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
-          alt="Beautiful Modern Design"
+          src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/6enkd0ip_A_breathtaking_zen-inspired_sustainable_modern_hom-1767878221383.png"
+          alt="Zen-Inspired Sustainable Design"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 via-stone-900/30 to-stone-900/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/20 to-stone-900/50" />
       </div>
 
       {/* Content */}
