@@ -30,7 +30,7 @@ const HeroSection = () => {
         </h1>
 
         {/* Description */}
-        <p className="max-w-2xl mx-auto text-stone-200 text-lg leading-relaxed mb-10">
+        <p className="max-w-2xl mx-auto text-stone-200 text-lg leading-relaxed mb-10" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)' }}>
           {siteConfig.description}
         </p>
 

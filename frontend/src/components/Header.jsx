@@ -31,10 +31,11 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
             />
           </a>
 
-          {/* Menu Button - White Icon */}
+          {/* Menu Button - White Icon with Strong Drop Shadow */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-white hover:text-emerald-300 transition-colors"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.6))' }}
           >
             {mobileMenuOpen ? <X className="w-6 h-6 md:w-7 md:h-7" /> : <Menu className="w-6 h-6 md:w-7 md:h-7" />}
           </button>
