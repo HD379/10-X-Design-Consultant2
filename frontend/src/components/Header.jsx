@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
@@ -19,24 +19,24 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
 
   return (
     <>
-      {/* Fixed Left Side Navigation with White Background */}
-      <header className="fixed top-4 left-4 z-50">
-        <div className="flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg">
+      {/* Fixed Top Left Navigation - No Background */}
+      <header className="fixed top-3 left-3 md:top-4 md:left-4 z-50">
+        <div className="flex items-center gap-2">
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/yphdj2ew_10%20X%20Design%20logo.png" 
               alt="10 X Design Logo" 
-              className="h-16 w-16 rounded-xl object-cover"
+              className="h-10 w-10 md:h-12 md:w-12 rounded-lg object-cover"
             />
           </a>
 
-          {/* Menu Button */}
+          {/* Menu Button - White Icon */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-3 text-stone-700 hover:text-emerald-700 transition-colors rounded-lg hover:bg-stone-100"
+            className="p-2 text-white hover:text-emerald-300 transition-colors"
           >
-            {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 md:w-7 md:h-7" /> : <Menu className="w-6 h-6 md:w-7 md:h-7" />}
           </button>
         </div>
       </header>
@@ -51,7 +51,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
           />
           
           {/* Menu Panel */}
-          <div className="absolute top-0 left-0 h-full w-72 bg-stone-900 shadow-2xl pt-28 px-6">
+          <div className="absolute top-0 left-0 h-full w-64 md:w-72 bg-stone-900 shadow-2xl pt-20 px-6">
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
