@@ -15,7 +15,7 @@ const AboutSection = () => {
           {/* Image */}
           <div className="relative">
             <img
-              src={images.garden1}
+              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/jyrj8gln_Jan%2012%202026%20Medicina%20089.jpg"
               alt="Dane Rose"
               className="w-full aspect-[4/5] object-cover rounded-xl"
             />
