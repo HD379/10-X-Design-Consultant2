@@ -1,6 +1,5 @@
 import React from 'react';
 import { Award, Calendar } from 'lucide-react';
-import { images } from '../data/mock';
 
 const AboutSection = () => {
   const highlights = [
