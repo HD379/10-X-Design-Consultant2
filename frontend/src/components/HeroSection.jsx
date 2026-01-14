@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Main Heading */}
         <h1 className="font-serif text-5xl md:text-7xl text-stone-100 leading-tight mb-6">
-          {siteConfig.tagline}
+          <span style={{ fontFamily: "'Times New Roman', Times, serif" }}>10</span> X Design for Sustainable Well-being
         </h1>
 
         {/* Description */}
