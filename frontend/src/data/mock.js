@@ -3,7 +3,7 @@
 export const siteConfig = {
   name: "Dane Rose",
   title: "10 X Designer & Consultant",
-  tagline: "Cultural Design for Sustainable Well-being",
+  tagline: "10 X Design for Sustainable Well-being",
   rate: "$175/hour",
   phone: "415-455-9161",
   email: "dane@mysticallandscapes.com",
