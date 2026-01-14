@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../data/mock';
 import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,21 +17,31 @@ const ContactSection = () => {
     links: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    toast.success('Message sent! Dane will contact you soon.');
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', motivation: '', dream: '', valuable: '', links: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    
+    try {
+      await axios.post(`${BACKEND_URL}/api/contact`, formData);
+      setSubmitted(true);
+      toast.success('Message sent! Dane will contact you soon.');
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', email: '', phone: '', motivation: '', dream: '', valuable: '', links: '' });
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -174,10 +187,11 @@ const ContactSection = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-emerald-800 text-white text-sm hover:bg-emerald-700 transition-all duration-300 rounded-lg"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-emerald-800 text-white text-sm hover:bg-emerald-700 transition-all duration-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="w-4 h-4" />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </>
