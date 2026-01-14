@@ -5,8 +5,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -36,6 +36,29 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+# Contact Form Models
+class ContactFormCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+    motivation: str
+    dream: str
+    valuable: Optional[str] = None
+    links: Optional[str] = None
+
+class ContactForm(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: str
+    phone: Optional[str] = None
+    motivation: str
+    dream: str
+    valuable: Optional[str] = None
+    links: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
