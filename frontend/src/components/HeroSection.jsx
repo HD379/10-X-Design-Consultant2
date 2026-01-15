@@ -43,12 +43,12 @@ const HeroSection = () => {
         </p>
 
         {/* CTA Button - No Arrow */}
-        <a
-          href="#contact"
-          className="inline-block px-8 py-4 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg"
+        <button
+          onClick={scrollToContact}
+          className="inline-block px-8 py-4 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg cursor-pointer"
         >
           Begin Your Journey
-        </a>
+        </button>
       </div>
 
       {/* Scroll Indicator */}
