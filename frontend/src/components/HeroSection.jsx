@@ -10,6 +10,14 @@ const HeroSection = () => {
     }
   };
 
+  const scrollToContact = (e) => {
+    e.preventDefault();
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Image with Overlay */}
