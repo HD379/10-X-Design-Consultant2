@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
-import { siteConfig } from '../data/mock';
 import { toast } from 'sonner';
 import axios from 'axios';
 
