@@ -58,17 +58,11 @@ const ContactSection = () => {
               Ready to transform your life, relationships, or business? Reach out to begin your journey.
             </p>
 
-            {/* Rate */}
-            <div className="bg-emerald-800 p-5 rounded-xl text-white">
-              <p className="text-emerald-200 text-sm uppercase tracking-wide mb-1">Consulting Rate</p>
-              <p className="font-sans text-2xl">{siteConfig.rate} or flat rate projects</p>
-            </div>
-
-            {/* Cosmic Harmony Image */}
+            {/* Lotus Image */}
             <div className="mt-6">
               <img 
-                src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/lejmy650_Geometry%20in%20Field.png"
-                alt="Seeds of Creation - Cosmic Harmony"
+                src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/9zd9aces_Lotus.png"
+                alt="Lotus - Sacred Geometry"
                 className="w-full rounded-xl"
               />
             </div>
