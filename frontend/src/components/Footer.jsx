@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const scrollToSection = (e, href) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const pageLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: '10 X Designing', href: '/10x-designing' },
+    { name: '10 X Culture', href: '/10x-culture' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' }
+  ];
 
   return (
     <footer className="bg-stone-900 text-stone-300 py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
@@ -26,15 +28,23 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
-          <div className="flex items-center gap-8 text-sm">
-            <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-emerald-400 transition-colors">About</a>
-            <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="hover:text-emerald-400 transition-colors">Services</a>
-            <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="hover:text-emerald-400 transition-colors">Contact</a>
+          {/* Page Links - Stacked in rows */}
+          <div className="md:col-span-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-3">
+              {pageLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-sm text-stone-400 hover:text-emerald-400 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-stone-800 text-center text-xs text-stone-500">
+        <div className="mt-10 pt-6 border-t border-stone-800 text-center text-xs text-stone-500">
           © {new Date().getFullYear()} Dane Rose Consulting. All rights reserved.
         </div>
       </div>
