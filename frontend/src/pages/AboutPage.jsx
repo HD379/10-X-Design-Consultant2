@@ -10,19 +10,17 @@ const AboutPage = () => {
     <div className="min-h-screen bg-stone-50">
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-stone-100">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="font-serif text-4xl md:text-5xl text-stone-800 mb-4">
-            About <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Design
-          </h1>
-          <p className="text-stone-600 text-lg">The story behind the practice</p>
-        </div>
-      </section>
-
       {/* Content Section */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-24 pb-16 lg:pt-28 lg:pb-24">
         <div className="max-w-5xl mx-auto px-6">
+          {/* Title */}
+          <div className="mb-8">
+            <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">About</span>
+            <h1 className="font-sans text-4xl text-stone-800 mt-3">
+              Design devoted to sustainable human well-being
+            </h1>
+          </div>
+
           <div className="grid lg:grid-cols-5 gap-12 items-start">
             {/* Image */}
             <div className="lg:col-span-2">
