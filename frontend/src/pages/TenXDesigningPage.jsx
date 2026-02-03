@@ -32,9 +32,11 @@ const TenXDesigningPage = () => {
       {/* Title Section */}
       <section className="pt-24 pb-12 lg:pt-28 lg:pb-16">
         <div className="max-w-5xl mx-auto px-6">
-          <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">Explore</span>
-          <h1 className="font-sans text-4xl text-stone-800 mt-3">
+          <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">
             <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing
+          </span>
+          <h1 className="font-sans text-4xl text-stone-800 mt-3">
+            Amplifying impact through intentional design
           </h1>
         </div>
       </section>
@@ -44,8 +46,7 @@ const TenXDesigningPage = () => {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-emerald-700 text-sm tracking-wider uppercase font-medium">Section 1</span>
-              <h2 className="font-sans text-3xl text-stone-800 mt-2 mb-6">
+              <h2 className="font-sans text-3xl text-stone-800 mb-6">
                 Why is <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing?
               </h2>
               <p className="text-stone-600 leading-relaxed">
@@ -81,8 +82,7 @@ const TenXDesigningPage = () => {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-emerald-700 text-sm tracking-wider uppercase font-medium">Section 2</span>
-              <h2 className="font-sans text-3xl text-stone-800 mt-2 mb-6">
+              <h2 className="font-sans text-3xl text-stone-800 mb-6">
                 What is <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing?
               </h2>
               <p className="text-stone-600 leading-relaxed">
@@ -98,8 +98,7 @@ const TenXDesigningPage = () => {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-emerald-700 text-sm tracking-wider uppercase font-medium">Section 3</span>
-              <h2 className="font-sans text-3xl text-stone-800 mt-2 mb-6">
+              <h2 className="font-sans text-3xl text-stone-800 mb-6">
                 <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Design Process
               </h2>
               <p className="text-stone-600 leading-relaxed">
@@ -135,8 +134,7 @@ const TenXDesigningPage = () => {
               </div>
             </div>
             <div>
-              <span className="text-emerald-700 text-sm tracking-wider uppercase font-medium">Section 4</span>
-              <h2 className="font-sans text-3xl text-stone-800 mt-2 mb-8">
+              <h2 className="font-sans text-3xl text-stone-800 mb-8">
                 Is your project a good fit?
               </h2>
               
@@ -168,7 +166,7 @@ const TenXDesigningPage = () => {
             If you believe your project is compatible with <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing, let's connect.
           </p>
           <Link
-            to="/#contact"
+            to="/contact"
             className="inline-block px-8 py-4 bg-stone-100 text-emerald-800 text-sm hover:bg-white transition-all duration-300 rounded-lg"
           >
             Get in Touch
