@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const TenXDesigningPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const fitPoints = [
     {
@@ -42,7 +48,7 @@ const TenXDesigningPage = () => {
       </section>
 
       {/* Section 1: Why is 10 X Designing? */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-stone-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -68,7 +74,7 @@ const TenXDesigningPage = () => {
       </section>
 
       {/* Section 2: What is 10 X Designing? */}
-      <section className="py-16 bg-stone-100">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 aspect-video bg-stone-200 rounded-xl flex items-center justify-center">
@@ -94,7 +100,7 @@ const TenXDesigningPage = () => {
       </section>
 
       {/* Section 3: 10 X Design Process */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-stone-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -120,7 +126,7 @@ const TenXDesigningPage = () => {
       </section>
 
       {/* Section 4: Is your project a good fit? */}
-      <section className="py-16 bg-stone-100">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="aspect-video bg-stone-200 rounded-xl flex items-center justify-center lg:sticky lg:top-24">
