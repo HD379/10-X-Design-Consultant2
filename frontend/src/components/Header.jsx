@@ -25,9 +25,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/xvs1rnze_10%20X%20Design%20logo.png" 
+              src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/yphdj2ew_10%20X%20Design%20logo.png" 
               alt="10 X Design Logo" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-10 rounded-lg object-cover"
             />
           </Link>
 
