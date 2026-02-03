@@ -1,23 +1,8 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/mock';
 
 const HeroSection = () => {
-  const scrollToAbout = () => {
-    const element = document.querySelector('#about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToContact = (e) => {
-    e.preventDefault();
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16">
       {/* Background Image with Overlay */}
@@ -42,22 +27,14 @@ const HeroSection = () => {
           {siteConfig.description}
         </p>
 
-        {/* CTA Button - No Arrow */}
-        <button
-          onClick={scrollToContact}
-          className="inline-block px-8 py-4 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg cursor-pointer"
+        {/* CTA Button */}
+        <Link
+          to="/contact"
+          className="inline-block px-8 py-4 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg"
         >
           Begin Your Journey
-        </button>
+        </Link>
       </div>
-
-      {/* Scroll Indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-stone-100/60 hover:text-stone-100 transition-colors duration-300 animate-bounce"
-      >
-        <ArrowDown className="w-6 h-6" />
-      </button>
     </section>
   );
 };
