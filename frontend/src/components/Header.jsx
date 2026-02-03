@@ -9,26 +9,12 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: '10 X Designing', href: '/10x-designing' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Contact', href: '/#contact' }
+    { name: '10 X Culture', href: '/10x-culture' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' }
   ];
 
-  const handleNavClick = (e, href) => {
-    if (href.startsWith('/#')) {
-      // Handle hash links for same-page navigation
-      if (location.pathname === '/') {
-        e.preventDefault();
-        const element = document.querySelector(href.substring(1));
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-    setMobileMenuOpen(false);
-  };
-
   const isActive = (href) => {
-    if (href === '/') return location.pathname === '/';
     return location.pathname === href;
   };
 
@@ -46,12 +32,11 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm transition-colors duration-300 ${
                   isActive(link.href) 
                     ? 'text-emerald-400' 
@@ -80,7 +65,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`py-2 text-sm transition-colors duration-300 ${
                     isActive(link.href) 
                       ? 'text-emerald-400' 
