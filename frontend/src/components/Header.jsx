@@ -1,81 +1,113 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
+  const location = useLocation();
+  
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Contact', href: '/#contact' }
   ];
 
-  const scrollToSection = (e, href) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (e, href) => {
+    if (href.startsWith('/#')) {
+      // Handle hash links for same-page navigation
+      if (location.pathname === '/') {
+        e.preventDefault();
+        const element = document.querySelector(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
     setMobileMenuOpen(false);
   };
 
+  const isActive = (href) => {
+    if (href === '/') return location.pathname === '/';
+    return location.pathname === href;
+  };
+
   return (
-    <>
-      {/* Fixed Top Left Navigation - No Background */}
-      <header className="fixed top-3 left-3 md:top-4 md:left-4 z-50">
-        <div className="flex items-center gap-2">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-stone-900/95 backdrop-blur-md">
+      <nav className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_42191151-847d-4955-92c3-b2ce1488d8fa/artifacts/yphdj2ew_10%20X%20Design%20logo.png" 
               alt="10 X Design Logo" 
-              className="h-10 w-10 md:h-12 md:w-12 rounded-lg object-cover"
+              className="h-10 w-10 rounded-lg object-cover"
             />
-          </a>
+          </Link>
 
-          {/* Menu Button - White Icon with Strong Drop Shadow */}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-sm transition-colors duration-300 ${
+                  isActive(link.href) 
+                    ? 'text-emerald-400' 
+                    : 'text-stone-300 hover:text-emerald-400'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              to="/#contact"
+              onClick={(e) => handleNavClick(e, '/#contact')}
+              className="px-5 py-2 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg"
+            >
+              Book a Call
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-white hover:text-emerald-300 transition-colors"
-            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.6))' }}
+            className="md:hidden p-2 text-stone-300 hover:text-white transition-colors"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 md:w-7 md:h-7" /> : <Menu className="w-6 h-6 md:w-7 md:h-7" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </header>
 
-      {/* Slide-out Navigation Menu */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          
-          {/* Menu Panel */}
-          <div className="absolute top-0 left-0 h-full w-64 md:w-72 bg-stone-900 shadow-2xl pt-20 px-6">
-            <nav className="flex flex-col gap-2">
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-stone-700">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-stone-300 hover:text-emerald-400 transition-colors duration-300 text-lg py-3 border-b border-stone-800"
+                  to={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`py-2 text-sm transition-colors duration-300 ${
+                    isActive(link.href) 
+                      ? 'text-emerald-400' 
+                      : 'text-stone-300 hover:text-emerald-400'
+                  }`}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, '#contact')}
-                className="mt-6 px-6 py-3 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg text-center"
+              <Link
+                to="/#contact"
+                onClick={(e) => handleNavClick(e, '/#contact')}
+                className="mt-2 px-5 py-2 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg text-center"
               >
                 Book a Call
-              </a>
-            </nav>
+              </Link>
+            </div>
           </div>
-        </div>
-      )}
-    </>
+        )}
+      </nav>
+    </header>
   );
 };
 
