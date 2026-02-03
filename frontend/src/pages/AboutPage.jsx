@@ -14,7 +14,7 @@ const AboutPage = () => {
       <section className="pt-24 pb-16 lg:pt-28 lg:pb-24">
         <div className="max-w-5xl mx-auto px-6">
           {/* Title */}
-          <div className="mb-8">
+          <div className="mb-12">
             <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">About</span>
             <h1 className="font-sans text-4xl text-stone-800 mt-3">
               Design devoted to sustainable human well-being
@@ -71,7 +71,7 @@ const AboutPage = () => {
             Let's explore how we can work together to create sustainable well-being.
           </p>
           <Link
-            to="/#contact"
+            to="/contact"
             className="inline-block px-8 py-4 bg-stone-100 text-emerald-800 text-sm hover:bg-white transition-all duration-300 rounded-lg"
           >
             Get in Touch
