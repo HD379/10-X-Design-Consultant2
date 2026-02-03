@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Heart, Building2, Leaf, Home, Users, Hotel } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -51,6 +51,12 @@ const services = [
 
 const ServicesPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -67,7 +73,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-stone-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => {
@@ -83,7 +89,7 @@ const ServicesPage = () => {
                 <CardWrapper
                   key={service.id}
                   {...cardProps}
-                  className={`bg-stone-50 p-6 rounded-xl border border-stone-200 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
+                  className={`bg-white p-6 rounded-xl border border-stone-200 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
                 >
                   <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center mb-4">
                     <IconComponent className="w-5 h-5 text-emerald-700" />
