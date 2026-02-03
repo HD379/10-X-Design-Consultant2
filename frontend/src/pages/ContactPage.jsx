@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Send, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import axios from 'axios';
@@ -9,6 +10,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const ContactPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +22,11 @@ const ContactPage = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,7 +68,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-stone-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left - Info */}
@@ -81,7 +88,7 @@ const ContactPage = () => {
             </div>
 
             {/* Right - Form */}
-            <div className="bg-stone-50 p-8 rounded-xl border border-stone-200">
+            <div className="bg-white p-8 rounded-xl border border-stone-200">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-8">
                   <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
@@ -102,7 +109,7 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
                         placeholder="Your name"
                       />
                     </div>
@@ -114,7 +121,7 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -125,7 +132,7 @@ const ContactPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
                         placeholder="(555) 000-0000"
                       />
                     </div>
@@ -165,7 +172,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         required
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50 resize-none"
                         placeholder="Share your vision..."
                       />
                     </div>
@@ -176,7 +183,7 @@ const ContactPage = () => {
                         value={formData.valuable}
                         onChange={handleChange}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50 resize-none"
                         placeholder="What outcomes would be most meaningful?"
                       />
                     </div>
@@ -187,7 +194,7 @@ const ContactPage = () => {
                         name="links"
                         value={formData.links}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all bg-stone-50"
                         placeholder="https://..."
                       />
                     </div>
