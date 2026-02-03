@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -34,7 +34,7 @@ const TenXCulturePage = () => {
       <section className="pt-24 pb-12 lg:pt-28 lg:pb-16">
         <div className="max-w-5xl mx-auto px-6">
           <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">
-            <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Culture
+            10 X Culture
           </span>
           <h1 className="font-sans text-4xl text-stone-800 mt-3">
             Exploring the art of cultural design
@@ -79,12 +79,12 @@ const TenXCulturePage = () => {
           <p className="text-stone-300 mb-8">
             Learn more about how cultural design can transform your projects and communities.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-8 py-4 bg-stone-100 text-emerald-800 text-sm hover:bg-white transition-all duration-300 rounded-lg"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
 
