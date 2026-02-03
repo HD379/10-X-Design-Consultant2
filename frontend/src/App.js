@@ -2,6 +2,7 @@ import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Toaster position="top-center" richColors />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </HashRouter>
     </div>
