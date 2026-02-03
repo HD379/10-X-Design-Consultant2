@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const TenXCulturePage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     // Load Vimeo player script
@@ -13,7 +20,9 @@ const TenXCulturePage = () => {
     document.body.appendChild(script);
     
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -34,7 +43,7 @@ const TenXCulturePage = () => {
       </section>
 
       {/* Video Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-stone-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-8">
             <h2 className="font-sans text-2xl text-stone-800 mb-4">
