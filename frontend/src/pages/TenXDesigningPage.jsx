@@ -39,7 +39,7 @@ const TenXDesigningPage = () => {
       <section className="pt-24 pb-12 lg:pt-28 lg:pb-16">
         <div className="max-w-5xl mx-auto px-6">
           <span className="text-emerald-700 text-base tracking-wider uppercase font-medium">
-            <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing
+            10 X Designing
           </span>
           <h1 className="font-sans text-4xl text-stone-800 mt-3">
             Amplifying impact through intentional design
@@ -53,7 +53,7 @@ const TenXDesigningPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-sans text-3xl text-stone-800 mb-6">
-                Why is <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing?
+                Why is 10 X Designing?
               </h2>
               <p className="text-stone-600 leading-relaxed">
                 Discover the philosophy and motivation behind 10 X Designing and why it matters for creating sustainable well-being.
@@ -89,7 +89,7 @@ const TenXDesigningPage = () => {
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="font-sans text-3xl text-stone-800 mb-6">
-                What is <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing?
+                What is 10 X Designing?
               </h2>
               <p className="text-stone-600 leading-relaxed">
                 Learn about the principles and practices that define 10 X Designing and how it differs from conventional design approaches.
@@ -105,7 +105,7 @@ const TenXDesigningPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-sans text-3xl text-stone-800 mb-6">
-                <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Design Process
+                10 X Design Process
               </h2>
               <p className="text-stone-600 leading-relaxed">
                 Understand the methodology and steps involved in the 10 X Design process, from initial concept to implementation.
@@ -169,7 +169,7 @@ const TenXDesigningPage = () => {
             Ready to Start Your Application?
           </h2>
           <p className="text-stone-300 mb-8">
-            If you believe your project is compatible with <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designing, let's connect.
+            If you believe your project is compatible with 10 X Designing, let's connect.
           </p>
           <Link
             to="/contact"
