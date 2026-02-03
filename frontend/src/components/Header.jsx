@@ -8,6 +8,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: '10 X Designing', href: '/10x-designing' },
     { name: 'Services', href: '/#services' },
     { name: 'Contact', href: '/#contact' }
   ];
@@ -60,13 +61,6 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/#contact"
-              onClick={(e) => handleNavClick(e, '/#contact')}
-              className="px-5 py-2 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg"
-            >
-              Book a Call
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,13 +90,6 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/#contact"
-                onClick={(e) => handleNavClick(e, '/#contact')}
-                className="mt-2 px-5 py-2 bg-emerald-700 text-stone-100 text-sm hover:bg-emerald-600 transition-all duration-300 rounded-lg text-center"
-              >
-                Book a Call
-              </Link>
             </div>
           </div>
         )}
