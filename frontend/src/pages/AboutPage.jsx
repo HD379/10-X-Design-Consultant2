@@ -53,7 +53,7 @@ const AboutPage = () => {
                 <span style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>10</span> X Designer is where these worlds come together. It reflects Dane's belief that designers can and should expand their impact by combining creativity with clarity, authorship with practice, and vision with real-world results.
               </p>
               
-              <p className="text-stone-800 font-medium text-xl mt-8">
+              <p className="text-stone-600 text-xl mt-8">
                 If you're looking to work with someone who brings depth, authorship, systems thinking, and lived design experience to the table, you're in the right place.
               </p>
             </div>
